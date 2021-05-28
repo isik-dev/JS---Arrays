@@ -6,5 +6,22 @@ todos.shift()
 
 
 console.log(`You have ${todos.length} todos`)
-console.log(todos)
 
+
+todos.forEach(function (item, index) {
+    console.log(`${index + 1}. ${item}`)
+})
+
+// 1. The first item
+// 2. The second item
+// ...
+
+for (let count = 0; count < todos.length; count ++ ) {
+    console.log(`${count + 1}. ${todos[count]}`)
+}
+
+for (let count = todos.length - 1; count >= 0; count --) {
+    const num = count + 1
+    const index =  todos[count]
+    console.log(`${num}. ${index}`)
+}
