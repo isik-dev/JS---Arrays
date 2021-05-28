@@ -44,8 +44,18 @@ const notes = [{}, {
 //     console.log(notes[count])
 // }
 
-const index = notes.findIndex(function (note, index) {
-    console.log(note)
-    return note.title === 'Habits to work on'
-})
-console.log(index)
+const findNote = function (notes, noteTitle) {
+    const index = notes.findIndex(function (note, index) {
+        return note.title.toLowerCase() === noteTitle.toLowerCase()
+    })
+    return notes[index]
+}
+
+const note = findNote(notes, 'Office modifications')
+console.log(note)
+
+// const index = notes.findIndex(function (note, index) {
+//     console.log(note)
+//     return note.title === 'Habits to work on'
+// })
+// console.log(index)
