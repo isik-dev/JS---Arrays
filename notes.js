@@ -62,28 +62,29 @@ const notes = [{
     body: 'ATOM'
 }]
 
+
+const findNotes = function (notes, query) {
+    return notes.filter(function (note, index) {
+        const isTitleMatch = note.title.toLowerCase().includes(query.toLowerCase())
+        const isBodyMatch = note.body.toLowerCase().includes(query.toLowerCase())
+        return isTitleMatch || isBodyMatch  
+    })
+}
+
+console.log(findNotes(notes, 'arm'))
+
+
+
+
+
+
+
 // const findNote = function (array, noteTitle) {
 //     const index = array.findIndex(function (element, index) {
 //         return element.title.toLowerCase() === noteTitle.toLowerCase()
 //     })
 //     return array[index]
 // }
-
-const findNote = function (array, noteTitle) {
-    return array.find(function (element, index) {
-        return element.title.toLowerCase() === noteTitle.toLowerCase()
-    })
-}   
-
-const note = findNote(notes, 'HTML')
-console.log(note)
-
-
-
-
-
-
-
 
 
 // console.log(notes.length)

@@ -55,8 +55,21 @@ const deleteTodo = function (array, elementText) {
     }
 }
 
-const note = deleteTodo(todos, 'grocery shopping')
-console.log(todos)
+const incompleteTodos = function (array) {
+    return array.filter(function (array) {
+        // const isBodyMatch = array.status.toLowerCase().includes('incomplete')
+        // return isBodyMatch
+        return array.status === 'complete'
+    })
+}
+
+incompleteList = incompleteTodos(todos)
+console.log(incompleteList)
+
+
+
+
+
 
 // deleteTodo(todos, 'Python')
 // console.log(todos)
