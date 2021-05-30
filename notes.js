@@ -1,13 +1,13 @@
-const notes = [{}, {
-    title: 'My next trip',
-    body: 'I would like to go to Switzerland'
-}, {
-    title: 'Habits to work on',
-    body: 'Exercise. Eating a bit better'
-}, {
-    title: 'Office modifications',
-    body: 'Get a new seat'
-}]
+// const notes = [{}, {
+//     title: 'My next trip',
+//     body: 'I would like to go to Switzerland'
+// }, {
+//     title: 'Habits to work on',
+//     body: 'Exercise. Eating a bit better'
+// }, {
+//     title: 'Office modifications',
+//     body: 'Get a new seat'
+// }]
 
 // //pop method removes a value from the end of our array
 // console.log(notes.pop())
@@ -44,18 +44,59 @@ const notes = [{}, {
 //     console.log(notes[count])
 // }
 
-const findNote = function (notes, noteTitle) {
-    const index = notes.findIndex(function (note, index) {
-        return note.title.toLowerCase() === noteTitle.toLowerCase()
-    })
-    return notes[index]
-}
-
-const note = findNote(notes, 'Office modifications')
-console.log(note)
 
 // const index = notes.findIndex(function (note, index) {
 //     console.log(note)
 //     return note.title === 'Habits to work on'
+// })
+// console.log(index)
+
+const notes = [{
+    title: 'Python',
+    body: 'Pycharm'
+}, {
+    title: 'JavaScript',
+    body: 'VSCode'
+}, {
+    title: 'HTML',
+    body: 'ATOM'
+}]
+
+// const findNote = function (array, noteTitle) {
+//     const index = array.findIndex(function (element, index) {
+//         return element.title.toLowerCase() === noteTitle.toLowerCase()
+//     })
+//     return array[index]
+// }
+
+const findNote = function (array, noteTitle) {
+    return array.find(function (element, index) {
+        return element.title.toLowerCase() === noteTitle.toLowerCase()
+    })
+}   
+
+const note = findNote(notes, 'HTML')
+console.log(note)
+
+
+
+
+
+
+
+
+
+// console.log(notes.length)
+// console.log(notes)
+
+// // console.log(notes.indexOf({}))
+
+// // let someObject = {}
+// // let otherObject = someObject
+// // console.log(someObject === otherObject)
+
+// const index = notes.findIndex(function (note, index) {
+//     console.log(note)
+//     return note.title === 'Python'
 // })
 // console.log(index)
