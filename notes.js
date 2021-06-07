@@ -114,6 +114,19 @@ const notes = [{
     body: 'Get a new seat'
 }]
 
+const sortNotes = function (notes) {
+    notes.sort(function (a, b) {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            return -1
+        } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
+
 const findNote = function (array, objectTitle) {
     return notes.find(function (item, index) {
         return item.title.toLowerCase() === objectTitle.toLowerCase()
@@ -128,15 +141,10 @@ const findNotes = function(notes, query) {
     })
 }
 
+// console.log(findNotes(notes, 'work'))
 
-console.log(findNotes(notes, 'work'))
+// const note = findNote(notes, 'office modifications')
+// console.log(note)
 
-// const findNote = function (array, objectTitle) {
-//     const index = notes.findIndex(function (item, index) {
-//         return item.title.toLowerCase() === objectTitle.toLowerCase()
-//     })
-//     return notes[index]
-// }
-
-const note = findNote(notes, 'office modifications')
-console.log(note)
+sortNotes(notes)
+console.log(notes)
