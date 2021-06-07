@@ -98,14 +98,22 @@ const todos = [{
 }]
 
 const deleteTodo = function (array, objectText) {
-    const index = array.findIndex(function (array, index) {
-        return array.text.toLowerCase() === objectText.toLowerCase()
+    const index = array.findIndex(function (item, index) {
+        return item.text.toLowerCase() === objectText.toLowerCase()
     })
     return todos.splice(index, 1)
 }
 
-// 1. Convert array to array of objects -> text, completed
-// 2. Create function to remove a todo by text value
+const incompleteTasks = function(array) {
+    return array.filter(function (item, index) {
+        return !item.completed
+        
+    })
+}
 
-deleteTodo(todos, 'workout')
-console.log(todos)
+
+
+console.log(incompleteTasks(todos))
+
+// deleteTodo(todos, 'workout')
+// console.log(todos)
