@@ -80,27 +80,32 @@
 // Print the first and second to last items -> Todo: walk the dog
 
 
-const todos = ['Buy grocery', 'Do homework', 'Clean the room', 'Workout', 'Read KGB']
+const todos = [{
+    text: 'Buy grocery',
+    completed: true
+}, {
+    text: 'Do homework',
+    completed: false
+}, {
+    text: 'Clean the room',
+    completed: true
+}, {
+    text: 'Workout',
+    completed: false
+}, {
+    text: 'Read KGB',
+    completed: true
+}]
 
-todos.splice(2, 1)
-todos.push('Buy coffee')
-todos.shift()
-
-console.log(`You have ${todos.length} todos! `)
-
-// 1. The first item
-// 2. The second item
-
-todos.forEach(function (item, index) {
-    const itemIndex = index + 1
-    console.log(`${itemIndex}. ${item}`) // or we can do: console.log(`${index + 1}. ${item}`)
-})
-
-
-// 1. The first item
-// 2. The second item
-// ...
-
-for (let count = 0; count < todos.length; count++) {
-    console.log(`${count + 1}. ${todos[count]}`)
+const deleteTodo = function (array, objectText) {
+    const index = array.findIndex(function (array, index) {
+        return array.text.toLowerCase() === objectText.toLowerCase()
+    })
+    return todos.splice(index, 1)
 }
+
+// 1. Convert array to array of objects -> text, completed
+// 2. Create function to remove a todo by text value
+
+deleteTodo(todos, 'workout')
+console.log(todos)

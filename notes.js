@@ -103,33 +103,29 @@
 // // console.log(index)
 
 
-const notes = ['Note 1 ', 'Note 2', 'Note 3']
+const notes = [{
+    title: 'My next trip',
+    body: 'I would like to go to Spain'
+}, {
+    title: 'Habits to work on',
+    body: ' Exercise. Eating a bit better'
+}, {
+    title: 'Office modifications',
+    body: 'Get a new seat'
+}]
 
-// notes.push('My new note')
-// const removedFromEnd = notes.pop()
-
-// notes.unshift('My first note')
-// const removedFromBeginning = notes.shift()
-
-// notes.splice(1, 1)
-// notes.splice(1, 0, 'This is the new second item')
-
-notes[2] = 'This is now the new note 3'
-
-notes.forEach(function (item, index) {
-    console.log(index)
-    console.log(item)
-})
-
-console.log(notes.length)
-console.log(notes)
-
-// Counting... 1
-
-for (count = 5; count>=0; count--) {
-    console.log(count)
+const findNote = function (array, objectTitle) {
+    return notes.find(function (item, index) {
+        return item.title.toLowerCase() === objectTitle.toLowerCase()
+    })
 }
 
-for (let count = notes.length - 1; count >= 0; count--) {
-    console.log(notes[count])
-}
+// const findNote = function (array, objectTitle) {
+//     const index = notes.findIndex(function (item, index) {
+//         return item.title.toLowerCase() === objectTitle.toLowerCase()
+//     })
+//     return notes[index]
+// }
+
+const note = findNote(notes, 'office modifications')
+console.log(note)
